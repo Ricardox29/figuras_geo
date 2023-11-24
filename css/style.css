@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Kanit', sans-serif;
+}
+
+body{
+    width: 100%;
+    min-width: 100vh;
+    background: url(../img/fondo\ unsplash.jpg);
+}
+
+section{
+    width: 90%;
+    margin: 100px;
+    border: 2px solid #fff;
+    background: transparent;
+    padding: 40px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+h2{
+    color: azure;
+    font-size: 40px;
+    padding: 20px;
+}
+
+.left, .right {
+    width: 50%;
+    text-align: center;
+    justify-content: center;
+    border: 1px solid rgb(0, 0, 0);
+}
+
+button{
+    padding: 8px 30px;
+    background: #000;
+    color: antiquewhite;
+    font-size: 18px;
+    border-radius: 0 20px 0 20px;
+    border: 1px solid #fff;
+    transition: .4s;
+    cursor: pointer;
+    margin: 10px;
+    box-shadow: 0 0 10px -3px;
+}
+
+button:hover{
+    border-radius: 20px 0 20px 0;
+    background-color: aqua;
+    color: #000;
+    box-shadow: 0 0 12 0 #fff;
+}
+
+#Figura {
+    width: 200px;
+    height: 200px;
+    background: #000;
+    border: 2px solid aqua;
+    margin: 40px auto;
+    transition: 1s;
+}
+
+#Figura.circulo{
+    border-radius: 50%;
+    background: #0ff;
+    border: 2px solid #000;
+    transform: rotate(-350deg);
+}
+
+#Figura.rectangulo{
+    width: 300px;
+    height: 150px;
+    background-color: #000;
+    border: 2px solid #0ff;
+    transform: rotateY(720deg);
+    transition-duration: 2s;
+}
+
+#Figura.rombo{
+    width: 200px;
+    height: 200px;
+    background-color: #000;
+    transform: rotate(45deg);
+    position: relative;
+    rotate: 90deg;
+}
+
+#Figura.imagen{
+    width: 300px;
+    height: 300px;
+    background-image: url('../img/rick-and-morty-1604562846.jpg');
+    background-size: cover; 
+    background-position: center; 
+    border: 1px solid #ddd;  
+    transform: 2s;
+    transform: rotateY(180deg);
+}
+
+#Figura.gif{
+    width: 300px;
+    height: 300px;
+    background-image: url('../img/ReYG.gif');
+    background-size: cover; 
+    background-position: center; 
+    border: 1px solid #ddd;  
+    transform: 2s;
+    transform: rotateY(180deg);
+}
+
+#Figura.triangulo{
+    width: 0;
+    height: 0;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    border-bottom: 200px solid #0ff;
+}
+
+#Figura.pacman{
+    width: 0;
+    height: 0;
+    border-top: 100px solid yellow; 
+    border-right: 100px solid transparent;
+    border-bottom: 100px solid yellow; 
+    border-left: 100px solid yellow;
+    border-radius: 100px; 
+}
+
+#Figura.luna{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #000; 
+    position: relative;
+    overflow: hidden;
+}
+
+#Figura.hoja {
+    width: 200px;
+    height: 200px;
+    border-radius: 0 90% 0% 90%;
+}
+
+#Figura.huevo{
+    width: 200px;
+    height: 250px;
+    background-color: #f5e99f; 
+    border-radius: 50% 90% 50% 90%; 
+}
+
+#Figura.trapecio{
+    width: 200px;
+    height: 0;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    border-bottom: 200px solid #000;
+    transform: perspective(500px) rotateX(60deg);
+}
+
+#Figura.moveup{
+    transition: 2s;
+    transform: translateY(-80px);
+}
+
+#Figura.moveleft{
+    transition: 2s;
+    transform: translateX(-80px);
+}
+
+#Figura.movebutton{
+    transition: 2s;
+    transform: translateY(80px);
+}
+
+#Figura.moveright{
+    transition: 2s;
+    transform: translateX(80px);
+}
+
+.left.active,.right.active{
+    border: 1px solid yellow;
+    transition: 2s;
+}
+
+.cambiarfondo.active{
+    background: url(../img/fondo-pantalla-cam.jpg);
+}
+
+.panel-lateral{
+    position: absolute;
+    z-index: 9;
+    top: 0;
+    left: -400px;
+    width: 400px;
+    background: #fff;
+    text-align: center;
+    padding: 60px 30px;
+    height: 100vh;
+    transition: 2s;
+
+    & h2 {
+        color: black;
+    }
+
+    & a {
+        background-color: #000;
+        color: #0ff;
+        padding: 8px 20px;
+        display: block;
+        text-align: center;
+        margin: 15px 0;
+        text-decoration: none;
+        transition: 2s;
+    }
+
+    & a:hover {
+        transform: scale(1.07);
+    }
+
+    & a.close {
+        position: absolute;
+        right: 20px;
+        top: 22px;
+        background: transparent;
+        color: aliceblue;
+        font-size: 22px;
+        border: transparent;
+        transition: 2s;
+    }
+}
+
+.panel-lateral.active{
+    left: 0;
+}
